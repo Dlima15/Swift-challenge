@@ -1,0 +1,50 @@
+/*Cor de Fundo*/
+.bg-gradient-swift {
+    background: linear-gradient(to right, #F04E29, #FBC02D); /*cor do fundo da página*/
+    min-height: 100vh; /*altura total da tela do navegador*/
+    margin:0; /*elimina qualquer espaço entre o elemento e o que está ao redor dele*/
+}
+
+/*Menu*/
+.bi-list{
+    margin-top: 11px;  /*Ajusta pra baixo*/
+
+}
+
+/*Logo Swift*/
+.logo-topo{
+    width: 140px;   /*Largura*/
+    height: auto;   /*Altura*/
+    margin-top: 11px;  /*Ajusta pra baixo*/
+    margin-left: 18px;   /*Ajusta pra direita*/
+}
+
+/*Barra de Progresso*/
+.progress-container{
+    width: 400px;
+    margin-top: -5px;  /*Ajusta pra cima*/
+    margin-left: 18px;   /*Ajusta pra direita*/
+}
+
+/*Números acima da barra de progresso*/
+.xp-numeros{
+    font-size: 14px;  
+    margin-left: 150px;   /*Ajusta pra direita*/  
+}
+
+/*Imagem da Medalha*/
+.medalha-icon{
+    width: 25px;   /*Largura*/
+    height: auto;   /*Altura*/
+    margin-top: 14px;  /*Ajusta pra baixo*/
+    margin-left: 18px;   /*Ajusta pra direita*/
+}
+
+.estrutura-central {
+  max-width: 1500px;         /* Aumenta a largura total */
+  margin: 16px;         /* Mantém centralizado e ajusta a subida da estrutura */
+  padding-left: 15px;        /* Reduz padding lateral */
+  padding-right: 15px;
+  max-height: 18px;
+}
+

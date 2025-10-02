@@ -1,0 +1,112 @@
+<!DOCTYPE html> <!-- Indica que o documento usa HTML5 -->
+<html lang="pt-br"> <!-- Início do documento, com idioma definido para português do Brasil -->
+<head>
+  <meta charset="UTF-8" /> <!-- Suporte a caracteres acentuados -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ^ Ajusta a escala para dispositivos móveis, importante para responsividade -->
+
+  <title>Recuperar Senha</title> <!-- Título exibido na aba do navegador -->
+
+  <!-- ============ IMPORTAÇÃO DE ESTILOS ============ -->
+
+  <!-- Bootstrap CSS (framework que fornece estilos prontos e sistema de grid) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Biblioteca de ícones do Bootstrap (para usar <i class="bi ...">) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Arquivo CSS próprio para personalizar a página -->
+  <link rel="stylesheet" href="styles/recuperar.css"/>
+</head>
+
+<!-- Fundo da Página -->
+<body class="bg-gradient-swift"> <!-- bg-gradient-swift é uma classe do seu CSS que aplica o fundo em degradê -->
+
+  <!-- ============ ÁREA CENTRAL DE LOGIN/RECUPERAÇÃO ============ -->
+  <div class="login-wrapper"> <!-- Contêiner principal da tela -->
+    <div class="login-overlay"> <!-- Camada interna (pode aplicar transparência ou centralização via CSS) -->
+
+      <!-- Formulário de recuperação -->
+      <form id="recuperarForm" class="p-4"> <!-- p-4 = padding interno do Bootstrap -->
+        
+        <!-- Logo no topo, alinhado à direita -->
+        <div class="header-recuperar mb-4"> <!-- text-end = texto alinhado à direita; mb-4 = margin-bottom -->
+          <h5 class="titulo-recuperar">Recuperar Senha</h5>
+          <img src="imgs/logo.png" alt="Logo Swift" class="logo-img" />
+        </div>
+       
+        <!-- ============ CAMPO DE E-MAIL ============ -->
+        <div class="mb-3"> <!-- mb-3 = margem inferior -->
+          <label for="email" class="form-label">E-mail cadastrado</label>
+          <!-- Campo de entrada para o e-mail -->
+          <input type="email" class="form-control input-icon" id="email" placeholder="email@exemplo" required />
+                    <!-- required = obrigatório; type="email" valida formato de e-mail -->
+        </div>
+
+        <!-- ============ CAMPO NOVA SENHA ============ -->
+<div class="mb-3">
+  <label for="novaSenha" class="form-label">Nova senha</label>
+  <input type="password" class="form-control" id="novaSenha" 
+         placeholder="******" required />
+  <small class="text-muted">
+    A senha deve conter 8+ caracteres, incluindo 1 número, 1 maiúscula e 1 minúscula.
+  </small>
+</div>
+
+<!-- ============ CONFIRMAÇÃO DA NOVA SENHA ============ -->
+<div class="mb-3">
+  <label for="confirmarSenha" class="form-label">Repetir nova senha</label>
+  <input type="password" class="form-control" id="confirmarSenha" 
+         placeholder="******" required />
+</div>
+        
+        <!-- ============ BOTÃO DE RECUPERAÇÃO ============ -->
+        <div class="d-grid mb-3">
+          <!-- d-grid = transforma em grid para o botão ocupar 100% da largura -->
+          <button type="submit" class="btn btn-danger" id="recuperarBtn" disabled>
+            Recuperar Senha
+          </button>
+          <!-- disabled = começa desativado; JS pode habilitar quando os campos estiverem corretos -->
+        </div>
+
+        <!-- Link para alterar e-mail (por exemplo, caso o usuário queira outro endereço) -->
+        <div class="text-center">
+          <a href="#" class="link-swift" id="alterarEmail">Alterar e-mail</a>
+        </div>
+
+        <!-- Link para voltar à tela de login -->
+        <div class="text-center mt-3">
+          <a href="login.html" class="link-swift">login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ TOAST (PEQUENA NOTIFICAÇÃO) ============ -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <!-- position-fixed: fica sempre no canto da tela
+         bottom-0 end-0: canto inferior direito
+         p-3: padding de 1rem
+         z-index: garante que aparece acima de outros elementos -->
+    <div id="toastEmail" class="toast fade align-items-center text-white bg-danger border-0" 
+         role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Um código de verificação foi enviado para o seu e-mail cadastrado.
+        </div>
+        <!-- Botão para fechar o toast -->
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" 
+                data-bs-dismiss="toast" aria-label="Fechar"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+
+  <!-- Bootstrap JS: funcionalidades como o toast e outros componentes -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Arquivo JavaScript próprio para validar e enviar o formulário -->
+  <script src="js/recuperar.js"></script>
+</body>
+</html>

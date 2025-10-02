@@ -1,0 +1,376 @@
+/* Variáveis de Cores */
+:root {
+    --color-primary: #ff7f00; /* Laranja forte */
+    --color-secondary: #ff4500; /* Laranja avermelhado */
+    --color-background: #fff;
+    --color-card: #fff;
+    --color-progress-fill: #ff8c00; /* Laranja médio para progresso */
+    --color-progress-bg: #f3e0d8; /* Fundo claro para progresso */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+}
+
+body {
+    background: linear-gradient(135deg, #ffc400, #ff4500, #ff7f00); /* Gradiente de fundo */
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal */
+}
+
+/* ------------------- Layout Principal ------------------- */
+
+.dashboard-container {
+    background: var(--color-background);
+    max-width: 1400px;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header-swift {
+    background: linear-gradient(90deg, #ffc400, #ff4500);
+    padding: 1rem 1.5rem;
+    color: var(--color-text-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand-swift {
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+    margin-left: 10px;
+}
+
+.menu-toggler {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.nav-icons .nav-icon {
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-icons .nav-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Animação para Ícones */
+.animated-icon {
+    animation: icon-pulse 2s infinite alternate;
+}
+
+@keyframes icon-pulse {
+    from { color: var(--color-text-light); }
+    to { color: #ffe4b5; /* Cor mais clara para o pulso */ }
+}
+
+.main-content {
+    background-color: var(--color-background);
+}
+
+/* ------------------- Seção de Imagem (Carne) ------------------- */
+
+.image-section {
+    background: url('../imgs/Filet\ Mignon\ Recipe.png') no-repeat center center/cover;
+    height: 100%;
+    min-height: 500px; /* Garante altura mínima no desktop */
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%); /* Borda diagonal */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Opcional: Efeito de desfoque ou sobreposição */
+.image-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 127, 0, 0.1); /* Ligeira sobreposição laranja */
+}
+
+/* ------------------- Cartões Base (Gerais) ------------------- */
+
+.card-swift {
+    background-color: var(--color-card);
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.card-swift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------- Cartão de Perfil ------------------- */
+
+.profile-card h5 {
+    font-weight: 700;
+}
+
+.profile-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-right: 15px;
+}
+
+.badge-swift {
+    background-color: #ffd700; /* Ouro */
+    color: #a0522d; /* Marrom escuro */
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: bounceIn 1s ease-out;
+}
+
+/* Barra de Progresso XP */
+.progress-bar-swift {
+    height: 10px;
+    background-color: var(--color-progress-bg);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-progress-fill);
+    border-radius: 5px;
+    transition: width 1s ease-out; /* Animação suave */
+    position: relative;
+}
+
+.progress-fill::after {
+    content: attr(data-xp);
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 0.7rem;
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+/* ------------------- Cartão de Feedback ------------------- */
+
+.feedback-card {
+    border-left: 5px solid var(--color-primary);
+}
+
+.feedback-card .stars .filled {
+    color: #ffd700;
+}
+
+.feedback-card .stars i {
+    font-size: 1.2rem;
+    transition: color 0.5s;
+}
+
+/* ------------------- Cartões de Missão/Tarefa ------------------- */
+
+.task-card {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    color: var(--color-text-light);
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.task-card small {
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.task-card .xp-reward {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-weight: 700;
+    animation: float-xp 2s infinite alternate;
+}
+
+.task-card .task-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.progress-bar-task {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    position: relative;
+}
+
+.progress-bar-task .progress-fill {
+    background-color: var(--color-text-light);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+.progress-bar-task .progress-text {
+    position: absolute;
+    right: 0;
+    bottom: -18px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------- Ícones Clicáveis ------------------- */
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.icon-circle:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(255, 127, 0, 0.5);
+}
+
+/* Tooltip simples (simulação do texto ao redor dos ícones) */
+.icon-circle:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    bottom: -30px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    white-space: nowrap;
+    animation: bounceUp 0.3s ease-out;
+}
+
+/* ------------------- Animações Globais ------------------- */
+
+/* Animação de Entrada (Todos os Cartões) */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-in {
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Animação de Flutuação XP */
+@keyframes float-xp {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-3px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Animação para o Badge/Medalha */
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* ------------------- Responsividade ------------------- */
+
+@media (max-width: 991.98px) {
+    .dashboard-container {
+        margin: 0;
+        border-radius: 0;
+        padding-bottom: 20px;
+    }
+
+    .dashboard-area {
+        padding: 20px !important;
+    }
+    
+    /* Reorganização para mobile */
+    .row > [class*="col-"] {
+        order: initial !important; /* Reseta a ordem definida para o grid */
+    }
+    
+    .icon-grid {
+        padding: 10px 0;
+    }
+    
+    .icon-circle {
+        width: 70px; /* Um pouco maior no mobile para clique */
+        height: 70px;
+    }
+}

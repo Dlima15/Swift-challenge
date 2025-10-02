@@ -1,0 +1,244 @@
+/* Container Central do Formulário */
+.estrutura-central {
+    /* Centraliza e define a largura máxima do formulário */
+    max-width: 600px; /* Reduzindo a largura para centralizar mais o conteúdo */
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+.row.bg-white {
+    /* Estilo da caixa branca que contém o formulário */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none; /* Remove a borda sutil, o layout parece mais limpo */
+}
+
+/* Oculta a imagem lateral que não aparece no layout da imagem fornecida */
+/* Garantindo que o formulário ocupe toda a largura do container branco */
+.col-md-6.p-0.d-none.d-md-block,
+.img-fluid {
+    display: none !important;
+    width: 0 !important;
+    padding: 0 !important;
+}
+
+/* Garante que o container do formulário ocupe 100% da largura do elemento .row */
+.col-md-6.p-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 40px !important; /* Aumenta o padding interno */
+}
+
+/* Estilo do ícone de Perfil e botões de ação */
+.d-flex.justify-content-between.align-items-center.mb-4 {
+    /* Alinha o ícone de perfil e os botões */
+    flex-direction: column; /* Coloca o ícone e os botões em colunas para simular o layout do topo */
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px;
+    margin-bottom: 40px !important;
+}
+
+.perfil-icon {
+    /* Ícone de perfil maior e cor cinza mais escura */
+    font-size: 80px !important;
+    color: #495057; /* Cinza escuro */
+    margin-bottom: 20px;
+}
+
+/* Estilos dos Botões "Editar", "Salvar", "Excluir" */
+.d-flex.gap-2 {
+    width: 100%;
+    justify-content: center; /* Centraliza os botões */
+    gap: 10px !important;
+}
+
+.d-flex.gap-2 button {
+    /* Fundo branco e texto vermelho */
+    border-color: #FF4500 !important;
+    color: #FF4500 !important;
+    background-color: white !important;
+    font-weight: 500;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    /* Ajusta a largura para que fiquem mais uniformes */
+    min-width: 80px;
+}
+
+/* Estilos dos Campos de Formulário */
+.mb-3 {
+    position: relative;
+    padding-right: 0; /* Remove padding lateral extra */
+    margin-bottom: 1.5rem !important; /* Espaço maior entre os campos */
+}
+
+.form-label {
+    /* Títulos dos campos */
+    font-weight: 400; /* Mais leve */
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    display: block; /* Garante que o label ocupe sua própria linha */
+}
+
+.form-control, .form-select {
+    /* Aparência para alinhamento horizontal e visual limpo */
+    border: none;
+    border-bottom: 1px solid #ddd; /* Linha inferior cinza clara */
+    border-radius: 0;
+    padding: 0.5rem 0; /* Padding vertical para alinhamento */
+    font-size: 1rem;
+    color: #333;
+    background-color: transparent; /* Fundo transparente */
+    /* Remove o foco padrão do bootstrap */
+    box-shadow: none !important;
+    width: 100%; /* Garante que o input ocupe a linha inteira */
+    display: inline-block;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #FF4500; /* Linha inferior vermelha no foco */
+}
+
+/* Iconografia ao lado dos campos (Simulando o layout minimalista do segundo print) */
+
+/* Estilos para o container dos inputs para colocar o ícone ao lado */
+.input-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.input-container:focus-within {
+    border-bottom-color: #FF4500;
+}
+
+.form-control.no-border {
+    border-bottom: none; /* Remove a borda do input se estiver dentro de um container com borda */
+    flex-grow: 1;
+}
+
+/* Posiciona os ícones ao lado direito dos inputs */
+.mb-3::after {
+    font-family: "bootstrap-icons";
+    position: absolute;
+    right: 0; /* Alinha com a borda direita do container */
+    bottom: 5px; /* Alinha o ícone com a linha de baixo */
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+/* Definição dos ícones (conforme o layout da primeira imagem e a necessidade de alinhamento) */
+.mb-3:nth-child(1)::after { /* Nome completo */
+    content: "\F47C"; /* bi-x-octagon-fill (Simulando um 'limpar' ou 'resetar') */
+    font-size: 1rem;
+}
+
+.mb-3:nth-child(2)::after { /* Email */
+    content: "\F15F"; /* bi-eye-slash-fill (Simulando um 'mostrar/ocultar') */
+    font-size: 1rem;
+}
+
+.mb-3:nth-child(3)::after { /* Senha */
+    content: "\F2CE"; /* bi-chat-square-text-fill (Simulando 'chat' ou 'comentário') */
+    font-size: 1rem;
+}
+
+.mb-3:nth-child(4) .form-select {
+    /* Estilos específicos para o select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Adicionar o ícone de seta customizado */
+    padding-right: 25px;
+}
+.mb-3:nth-child(4)::after { /* Função (Select) */
+    content: "\F4E5"; /* bi-caret-down-fill (Ícone de seta para select) */
+    right: 0;
+    bottom: 8px;
+    font-size: 0.8rem;
+    color: #333; /* Cor mais escura para a seta do select */
+}
+
+
+.mb-3:nth-child(5)::after { /* Aniversário */
+    content: "\F253"; /* bi-clock (Ícone de relógio) */
+    font-size: 1rem;
+}
+
+/* Para campos que não tem ícone, como Cidade e Estado (últimos 2) */
+.mb-3:nth-child(6)::after,
+.mb-3:nth-child(7)::after {
+    content: none;
+}
+
+
+/* Ocultar o botão "Voltar" que estava no HTML, pois não faz parte do layout centralizado */
+.text-center .btn-primary {
+    display: none !important;
+}
+
+/* Estilos globais e de reset */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Gradiente de Fundo (Conforme a imagem) */
+.bg-gradient-swift {
+    /* Tentativa mais próxima do visual da imagem (vermelho/laranja escuro nas bordas para amarelo no centro) */
+    background: radial-gradient(circle at center, #FFCC33 0%, #FF8C00 50%, #B22222 100%);
+    min-height: 100vh; /* Garante que o gradiente cubra toda a altura */
+    background-attachment: fixed;
+}
+
+/* Estilos para o Cabeçalho (TOPO) */
+header {
+    background-color: transparent;
+    color: white;
+}
+
+.logo-topo {
+    height: 30px; /* Ajuste o tamanho da logo */
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px; /* Largura para a barra de progresso */
+}
+
+.xp-numeros {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.75rem; /* Letras pequenas para os números de XP */
+}
+
+.progress {
+    flex-grow: 1;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3); /* Fundo claro e transparente para a barra */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #FF4500 !important; /* Cor Laranja/Vermelha para o progresso */
+    height: 10px;
+    border-radius: 5px;
+}
+
+.medalha-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Ícones de notificação e configurações */
+header .bi-bell,
+header .bi-gear {
+    cursor: pointer;
+}

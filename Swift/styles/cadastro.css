@@ -1,0 +1,75 @@
+.btn-danger {
+    background-color: var(--laranja);
+}
+
+/*
+ * CÓDIGO RESPONSIVO
+ * Ajusta o container principal e o formulário para diferentes tamanhos de tela.
+ */
+
+/* === ESTILOS GERAIS/DESKTOP (BASE) === */
+
+/* Garante que o container principal ocupe 100% da altura da viewport e centralize o conteúdo */
+.container-fluid.min-vh-100 {
+    padding: 0;
+    margin: 0;
+}
+
+/* Row principal que centraliza o conteúdo */
+.row.w-100 {
+    margin: 0;
+}
+
+/* === RESPONSIVIDADE PARA TELAS MÉDIAS (TABLETS: < 992px) === */
+@media (max-width: 991.98px) {
+    /* Esconde a logo em telas menores que 'lg' (já feito no HTML, mas garantimos) */
+    .col-lg-6.d-none.d-lg-flex {
+        display: none !important;
+    }
+
+    /* O formulário agora ocupa uma largura maior no centro */
+    .col-lg-4.col-md-8 {
+        /* Garante que ele ocupe 100% da largura em telas pequenas e limite-o em telas médias */
+        width: 90%;
+        max-width: 500px; /* Limite máximo para o formulário não ficar gigante no tablet */
+    }
+
+    /* Ajusta o padding interno do formulário */
+    #formCadastro {
+        padding: 40px !important;
+    }
+}
+
+/* === RESPONSIVIDADE PARA TELAS PEQUENAS (CELULARES: < 576px) === */
+@media (max-width: 575.98px) {
+    /* O container principal pode ter um padding vertical maior para evitar colar no topo/fundo */
+    .container-fluid.min-vh-100 {
+        padding: 20px 0;
+    }
+
+    /* O formulário ocupa quase a largura total em celulares */
+    .col-lg-4.col-md-8 {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    /* Reduz o padding interno do formulário para ser menos espaçoso */
+    #formCadastro {
+        padding: 25px !important;
+    }
+    
+    /* Remove a imagem decorativa que pode ficar pequena demais */
+    #formCadastro .float-end.mb-4 {
+        display: none !important;
+    }
+
+    /* Ajuste de tamanho e espaçamento dos inputs */
+    .input-group-text {
+        font-size: 0.9rem;
+        padding: 0.375rem 0.6rem; /* Reduz um pouco o padding dos ícones */
+    }
+
+    .form-control, .form-select, .btn {
+        font-size: 0.9rem;
+    }
+}

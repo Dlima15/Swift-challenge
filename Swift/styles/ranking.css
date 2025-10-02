@@ -1,0 +1,19 @@
+/* Fundo do topo com gradiente */
+body {
+  background: linear-gradient(to right, #d32f2f, #ff9800);
+}
+
+/* Caixas de ranking */
+.ranking-box {
+  background: #ffffff;
+  border: 2px solid #f34a27;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  width: 250px;
+}
+
+.list-group-item {
+  border: none;
+  font-size: 0.95rem;
+}

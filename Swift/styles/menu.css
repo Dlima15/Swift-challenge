@@ -1,0 +1,412 @@
+/* Variáveis de Cores */
+:root {
+    --color-primary: #ff7f00; /* Laranja forte */
+    --color-secondary: #ff4500; /* Laranja avermelhado */
+    --color-background-app: #fff;
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-xp-fill: #ff8c00; 
+    --color-xp-bg: #f3e0d8;
+    --color-star: #ffc400; /* Amarelo da estrela */
+    --color-sidebar-bg: #f8f9fa;
+    --color-sidebar-active: #ff4500;
+}
+
+body {
+    background: linear-gradient(135deg, #ffc400, #ff4500, #ff7f00);
+    min-height: 100vh;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* ------------------- Estrutura Principal ------------------- */
+
+.main-wrapper {
+    display: flex;
+    max-width: 1600px;
+    margin: 20px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-background-app);
+    /* Gradiente da borda externa */
+    border: 10px solid transparent; 
+    border-image: linear-gradient(45deg, #ffc400, #ff4500, #ff7f00) 1;
+}
+
+/* ------------------- Menu Lateral (Sidebar) ------------------- */
+
+.sidebar-swift {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: var(--color-sidebar-bg);
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    height: auto; /* Acompanha o conteúdo */
+    transition: all 0.3s;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-nav .nav-link {
+    color: var(--color-text-dark);
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.1rem;
+    width: 25px;
+    margin-right: 10px;
+    color: var(--color-primary);
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(255, 127, 0, 0.1);
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.sidebar-nav .nav-item.active .nav-link {
+    background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+    color: var(--color-text-light);
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.3);
+}
+
+.sidebar-nav .nav-item.active .nav-link i {
+    color: var(--color-text-light);
+}
+
+.separator {
+    margin: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.admin-link .nav-link {
+    border: 1px dashed var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+/* ------------------- Área de Conteúdo (Dashboard) ------------------- */
+
+.content-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--color-background-app);
+}
+
+/* Header Compacto (Topo) */
+.header-swift {
+    background: linear-gradient(90deg, #ffc400, #ff4500);
+    padding: 0.8rem 1.5rem;
+    color: var(--color-text-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand-swift {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+}
+
+.menu-toggler {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+/* Barra de XP (Compacta no Header) */
+.xp-bar-header {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.progress-bar-swift {
+    height: 8px;
+    width: 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-text-light);
+    border-radius: 5px;
+}
+.badge-swift {
+    background-color: #ffd700; 
+    color: #a0522d;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+/* ------------------- Dashboard Content ------------------- */
+
+.dashboard-container {
+    background-color: var(--color-background-app);
+}
+
+/* Seção de Imagem (Carne) */
+.image-section {
+    background: url('image_488469.jpg') no-repeat center center/cover;
+    height: 100%;
+    min-height: 800px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%); 
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mensagens de Boas-vindas */
+.welcome-message {
+    font-weight: 900;
+    color: var(--color-text-dark);
+    font-size: 2.5rem;
+}
+.user-name {
+    color: var(--color-primary);
+}
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Cards (Geral) */
+.card-swift {
+    border: 1px solid var(--color-secondary);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Card de Perfil */
+.profile-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+.user-name-card {
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+.badge-card {
+    background-color: #ffd700; 
+    color: var(--color-secondary);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.progress-bar-card {
+    height: 8px;
+    background-color: var(--color-xp-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-bar-card .progress-fill {
+    background-color: var(--color-xp-fill);
+}
+
+/* Card de Feedback */
+.feedback-icon {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+.feedback-client {
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+.feedback-card .stars .filled {
+    color: var(--color-star);
+}
+.feedback-card .stars {
+    font-size: 1.1rem;
+}
+
+/* ------------------- Grid de Acesso Rápido ------------------- */
+.quick-access-title {
+    font-weight: 600;
+    color: var(--color-primary);
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 10px;
+}
+
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-xp-bg);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 15px 5px;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    transition: all 0.2s;
+}
+
+.icon-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.icon-link i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+    transition: color 0.2s;
+}
+
+.icon-link:hover i {
+    color: var(--color-text-light);
+}
+
+.icon-link span {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ------------------- Cards de Metas ------------------- */
+
+.goals-title {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.goal-card {
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, #fff, var(--color-xp-bg));
+    position: relative;
+    overflow: hidden;
+}
+
+.goal-text {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.xp-reward {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.goal-description {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
+.progress-container {
+    height: 15px;
+    background-color: #eee;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-goal {
+    height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    transition: width 0.5s ease-out;
+}
+
+.progress-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--color-text-light);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animações */
+@keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.animated-in { opacity: 0; animation: slideInUp 0.6s ease-out forwards; }
+.delay-05 { animation-delay: 0.5s; }
+.delay-1 { animation-delay: 1.0s; }
+.delay-2 { animation-delay: 1.2s; }
+.delay-3 { animation-delay: 1.4s; }
+.delay-4 { animation-delay: 1.6s; }
+.delay-5 { animation-delay: 1.8s; }
+.delay-6 { animation-delay: 2.0s; }
+.delay-7 { animation-delay: 2.2s; }
+.delay-8 { animation-delay: 2.4s; }
+
+
+/* ------------------- Responsividade ------------------- */
+
+@media (max-width: 991.98px) {
+    .main-wrapper {
+        margin: 0;
+        border-radius: 0;
+        border-width: 0;
+    }
+    
+    /* Oculta o Sidebar por padrão e configura como overlay no mobile */
+    .sidebar-swift {
+        position: fixed;
+        left: -260px; /* Esconde fora da tela */
+        top: 0;
+        bottom: 0;
+        z-index: 1050; /* Acima de todo o conteúdo */
+        padding-top: 5rem;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Classe para mostrar o sidebar (controlada pelo JS/Bootstrap) */
+    .sidebar-swift.show {
+        left: 0;
+    }
+
+    .content-area {
+        margin-left: 0 !important; /* Garante que o conteúdo não se mova no mobile */
+    }
+
+    .open-btn {
+        display: block !important;
+    }
+    .close-btn {
+        display: block !important;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: var(--color-text-dark) !important;
+    }
+    .xp-bar-header .progress-bar-swift {
+        display: none !important;
+    }
+    .welcome-message {
+        font-size: 2rem;
+    }
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dashboard-content {
+        padding: 20px !important;
+    }
+}

@@ -1,0 +1,230 @@
+/*
+ * =================================================================
+ * VARIÁVEIS E ESTILOS GLOBAIS
+ * =================================================================
+ */
+:root {
+    --swift-red: #F04E29; /* Cor principal da marca (pode ser ajustada para o vermelho/laranja real da Swift) */
+    --swift-red-dark: #d84315;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * =================================================================
+ * BACKGROUND E LAYOUT PRINCIPAL (DESKTOP)
+ * =================================================================
+ */
+
+/* Contêiner de Fundo - Responsável pela Imagem, Overlay e Layout em Desktop */
+.bg-gradient-swift {
+    /* Overlay sutil para garantir contraste e estilo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+                      url("../imgs/fachada.png"); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax suave (para desktop) */
+
+    /* Layout (Desktop/Tablet) */
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; /* Alinha o conteúdo (login-wrapper) à direita */
+    padding-right: 8vw; /* Padding flexível em vez de 200px fixo */
+}
+
+/* Wrapper Central - Usado para posicionar o formulário em Mobile (será sobrescrito) */
+.login-wrapper {
+    min-height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/*
+ * =================================================================
+ * CAIXA DE LOGIN E RECUPERAÇÃO (OVERLAY)
+ * =================================================================
+ */
+
+/* Caixa Branca do Formulário */
+.login-overlay {
+    background-color: #fff;
+    border-radius: 16px; /* Bordas mais suaves */
+    box-shadow: 0 10px 30px var(--shadow-color); /* Sombra mais destacada e moderna */
+    width: 100%;
+    max-width: 440px; /* Pouco maior para melhor design */
+    padding: 35px; /* Aumento do padding interno para mais 'ar' */
+    box-sizing: border-box;
+    /* Animação de entrada sutil (opcional) */
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Títulos (Login/Recuperar) */
+.header-recuperar, .header-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px; 
+}
+
+.titulo-recuperar, .titulo-login {
+    margin: 0;
+    font-size: 1.75rem; /* Título maior */
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo-img {
+    height: 48px; /* Tamanho levemente maior */
+    width: auto;
+}
+
+/*
+ * =================================================================
+ * ELEMENTOS DO FORMULÁRIO
+ * =================================================================
+ */
+
+/* Links */
+.link-swift {
+    color: var(--swift-red);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link-swift:hover {
+    color: var(--swift-red-dark);
+    text-decoration: underline;
+}
+
+/* Botão de Ação Principal */
+.btn-swift {
+    background-color: var(--swift-red);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 12px 25px; 
+    width: 100%; /* Largura total */
+    margin-top: 20px; 
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-swift:hover {
+    background-color: var(--swift-red-dark);
+}
+
+/* Campo de Input + Ícone (requer um wrapper pai com position: relative) */
+.input-group-relative {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Ajuste de Input para acomodar o ícone e padding */
+.input-group-relative input {
+    width: 100%;
+    padding: 12px 45px 12px 15px; /* Aumenta padding: 45px à direita para o ícone */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-group-relative input:focus {
+    border-color: var(--swift-red);
+    outline: none;
+}
+
+/* Campo com espaço extra para ícone (se usado diretamente no input) */
+/* Este seletor é redundante com o anterior, mas o mantemos para ser completo */
+.input-icon {
+    /* O padding já está ajustado no seletor acima para 45px, que é o ideal */
+}
+
+/* Ícone de olho (Toggle Eye) - Posicionamento Preciso */
+.toggle-eye {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino vertical */
+    right: 15px; /* Distância da borda direita do input */
+    cursor: pointer;
+    font-size: 1.3rem; 
+    color: #888; 
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.toggle-eye:hover {
+    color: var(--swift-red);
+}
+
+
+/*
+ * =================================================================
+ * RESPONSIVIDADE (MEDIA QUERIES)
+ * =================================================================
+ */
+
+/* Mobile e Tablets Pequenos (Até 800px) */
+@media (max-width: 800px) {
+    
+    /* Fundo em Mobile: Centraliza e prepara o layout de tela cheia */
+    .bg-gradient-swift {
+        background-attachment: scroll; /* Remove parallax */
+        justify-content: center; /* Centraliza o formulário horizontalmente */
+        align-items: flex-start; /* Move o formulário para o topo */
+        padding-right: 0; /* Remove padding lateral */
+        min-height: 100vh;
+    }
+
+    /* O wrapper se ajusta ao novo layout */
+    .login-wrapper {
+        align-items: flex-start;
+        padding: 10px;
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Caixa de Login em Mobile: Tela cheia e sem sombra para melhor visualização */
+    .login-overlay {
+        margin-top: 40px; /* Empurra um pouco para baixo */
+        border-radius: 0; 
+        box-shadow: none; /* Remove a sombra */
+        max-width: 100%;
+        padding: 25px 20px; /* Reduz o padding horizontal */
+        border-radius: 12px; /* Mantém um pequeno radius para celular */
+    }
+
+    .titulo-recuperar, .titulo-login {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste para Remember Me / Esqueceu Senha */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+}

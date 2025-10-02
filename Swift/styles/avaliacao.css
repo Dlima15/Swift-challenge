@@ -1,0 +1,83 @@
+/* === CARD DE AVALIAÇÃO === */
+.card-avaliacao {
+  border: 2px solid #dc3545;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%; /* ocupa toda a largura da coluna */
+}
+
+/* Nome do cliente */
+.card-avaliacao h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Texto da avaliação */
+.card-avaliacao p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* Estrelas */
+.text-warning {
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+/* Alinhamento dos cards */
+.row-cols-md-2 > .col {
+  display: flex;
+}
+
+/*
+ * CÓDIGO RESPONSIVO
+ * Ajusta o layout do card de avaliação para dispositivos móveis.
+ */
+
+@media (max-width: 768px) {
+    /* Ajustes gerais para telas de tablets e celulares */
+
+    .card-avaliacao {
+        /* Reduz o padding interno do card para economizar espaço */
+        padding: 15px;
+        /* Em telas menores, ocupa a largura total da coluna */
+        width: 100%;
+        /* Garante que a altura não seja muito rígida, se necessário */
+        height: auto;
+    }
+
+    /* Título (Nome do cliente) */
+    .card-avaliacao h5 {
+        /* Reduz um pouco o espaçamento inferior */
+        margin-bottom: 8px;
+        /* Reduz o tamanho da fonte para melhor visualização */
+        font-size: 1rem;
+    }
+
+    /* Texto da avaliação */
+    .card-avaliacao p {
+        /* Reduz o tamanho da fonte do texto principal */
+        font-size: 0.9rem;
+        /* Reduz o espaçamento inferior */
+        margin-bottom: 10px;
+    }
+
+    /* Estrelas */
+    .text-warning {
+        /* Reduz ligeiramente o tamanho das estrelas */
+        font-size: 1.1rem;
+    }
+    
+    /* Alinhamento dos cards na grade (se estiver usando Bootstrap) */
+    /* Garante que os cards empilhem perfeitamente se a grade for ajustada */
+    .row-cols-md-2 > .col {
+        /* Em telas pequenas, a coluna deve se comportar como um bloco normal */
+        display: block; 
+    }
+}

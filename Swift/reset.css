@@ -1,0 +1,16 @@
+@import url(styles/cadastro.css);
+@import url(styles/ranking.css);
+@import url(styles/metas.css);
+
+:root {
+    --laranja: #F04E29;
+    --branco: #ffffff;
+}
+
+.container-fluid {
+    background-image: url("./imgs/franquia-swift.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+}

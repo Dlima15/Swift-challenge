@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moedas</title>
+
+  <!-- Bootstrap: ajuda com layout e responsividade -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Seus estilos personalizados -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/conversor.css">
+</head>
+
+<body class="bg-gradient-swift">
+
+  <!-- TOPO DA PÁGINA -->
+  <header class="d-flex align-items-center justify-content-between p-3 text-white">
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-list fs-3"></i>
+      <img src="imgs/logobranco.svg" alt="Logo Swift" class="logo-topo">
+
+      <!-- Barra de progresso -->
+      <div class="progress-container">
+        <span class="small text-white xp-numeros">1250 / 2500 XP</span>
+        <div class="progress">
+          <div class="progress-bar bg-danger" style="width: 50%;"></div>
+        </div>
+      </div>
+
+      <!-- Medalha -->
+      <img src="imgs/megalhabronze.svg" alt="Medalha Bronze" class="medalha-icon">
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-bell fs-4"></i>
+      <i class="bi bi-gear fs-4"></i>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container-fluid my-1">
+    <div class="estrutura-central mx-auto">
+      <div class="row bg-white rounded shadow overflow-hidden">
+
+        <!-- COLUNA ESQUERDA: Imagem da carne -->
+        <div class="col-md-6 p-0 d-none d-md-block">
+          <div class="imagem-wrapper">
+            <img src="imgs/carne_grelha.jpeg" alt="Imagem lateral" class="img-fluid object-fit-cover">
+          </div>
+        </div>
+
+        <!-- COLUNA DIREITA -->
+<!-- COLUNA DIREITA -->
+<div class="col-md-6 p-6 d-flex flex-column">
+
+  <!-- TÍTULO -->
+  <div class="titulo-moedas">
+    <h2 class="fw-semibold text-dark">Conversor de Moedas</h2>
+  </div>
+
+  <!-- CONTEÚDO CENTRALIZADO -->
+  <div class="conteudo-moedas d-flex gap-4">
+    
+    <!-- Lista de desafios -->
+    <div class="flex-grow-1">
+      <ul class="list-unstyled">
+        <li class="mb-3"><strong>Desafio diário</strong> – XP + 200<br><small>Expira: 18/05/2025</small></li>
+        <li class="mb-3"><strong>Desafio semanal</strong> – XP + 1300<br><small>Expira: 11/05/2025</small></li>
+        <li class="mb-3"><strong>Desafio diário</strong> – XP + 400<br><small>Expira: 18/05/2025</small></li>
+        <li class="mb-3"><strong>Desafio mensal</strong> – XP + 530<br><small>Expira: 11/05/2025</small></li>
+        <li class="mb-3"><strong>Desafio semanal</strong> – XP + 1300<br><small>Expira: 11/05/2025</small></li>
+      </ul>
+    </div>
+
+    <!-- Card de pontos e moedas -->
+    <div class="pontos-card text-center">
+      <div class="mb-4">
+        <h5 class="fw-semibold">Pontos virtuais</h5>
+        <h1 id="pontos" class="fs-3 fw-bold">2530</h1>
+        <div id="converter" class="converter-btn mx-auto mt-3">
+          <i class="bi bi-currency-exchange fs-4"></i>
+        </div>
+      </div>
+      <hr class="border-dark">
+      <div class="mt-4">
+        <h5 class="fw-semibold">Moedas <i class="bi bi-coin text-white"></i></h5>
+        <h1 id="moedas" class="fs-3 fw-bold">10</h1>
+      </div>
+    </div>
+
+  </div> <!-- fim do conteudo-moedas -->
+
+</div> <!-- fim da coluna direita -->
+</div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/conversor.js"></script>
+</body>
+</html>

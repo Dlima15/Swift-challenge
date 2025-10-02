@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Estilos customizados -->
+  <link rel="stylesheet" href="styles/login.css" />
+
+  <style>
+    .input-group-password {
+      position: relative;
+    }
+    .toggle-eye {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 5;
+      color: #6c757d; /* Cor cinza para o ícone */
+    }
+  </style>
+</head>
+<body class="bg-gradient-swift">
+
+  <div class="login-wrapper">
+    <div class="login-overlay">
+      <form id="loginForm" class="p-4">
+
+        <!-- Cabeçalho -->
+        <div class="header-login mb-4 text-center">
+          <h5 class="titulo-login">Login</h5>
+          <img src="imgs/logo.png" alt="Logo Swift" class="logo-img" />
+        </div>
+
+        <!-- Alerta -->
+        <div id="alertMessage" class="alert alert-danger d-none" role="alert"></div>
+
+        <!-- Campo Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input 
+            type="email" 
+            class="form-control input-icon" 
+            id="email" 
+            placeholder="email@exemplo.com" 
+            required 
+          />
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="mb-3 input-group-password">
+          <label for="password" class="form-label">Senha</label>
+          <input 
+            type="password" 
+            class="form-control input-icon" 
+            id="password" 
+            placeholder="******" 
+            required 
+          />
+          <i class="bi bi-eye-slash toggle-eye" style="display: none;"></i>
+        </div>
+
+        <!-- Opções extras -->
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember" />
+            <label class="form-check-label" for="remember">Lembrar login</label>
+          </div>
+          <a href="recuperar.html" class="link-swift ms-2">Esqueceu a senha?</a>
+        </div>
+
+        <!-- Estado -->
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <select id="estado" class="form-select" required>
+            <option value="">Selecione o estado</option>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+          </select>
+        </div>
+
+        <!-- Cidade -->
+        <div class="mb-3">
+          <label for="cidade" class="form-label">Cidade</label>
+          <select id="cidade" class="form-select" required>
+            <option value="">Selecione a cidade</option>
+            <option value="sbc">São Bernardo do Campo</option>
+            <option value="sp-capital">São Paulo - Capital</option>
+            <option value="rj-capital">Rio de Janeiro - Capital</option>
+          </select>
+        </div>
+
+        <!-- Botão Entrar -->
+        <div class="d-grid mb-3">
+          <button type="submit" id="loginButton" class="btn-swift">Entrar</button>
+        </div>
+
+        <!-- Cadastro -->
+        <div class="text-center">
+          Não tem cadastro? 
+          <a href="cadastro.html" class="link-swift">Cadastrar</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+/* Estilos globais e de reset */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Gradiente de Fundo (Conforme a imagem) */
+.bg-gradient-swift {
+    /* O gradiente parece ir do vermelho/laranja escuro no topo para o amarelo claro no canto inferior direito */
+    background: linear-gradient(135deg, #FF4500 0%, #FF8C00 70%, #FFD700 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* Estilos para o Cabeçalho (TOPO) */
+header {
+    background-color: transparent;
+    color: white;
+}
+
+.logo-topo {
+    height: 30px;
+}
+
+/* Container de XP e Medalha */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    margin-left: 20px; /* Adiciona espaço entre a logo e a barra */
+}
+
+.xp-numeros {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 0.75rem;
+    position: absolute; /* Para sobrepor a barra de progresso */
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px; /* Ajusta a posição acima da barra */
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Sombra sutil para destacar */
+}
+
+.progress {
+    flex-grow: 1;
+    height: 12px; /* Altura da barra */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    overflow: visible; /* Necessário para o texto de XP */
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda sutil */
+}
+
+.progress-bar {
+    /* A cor da barra de progresso na imagem é laranja/vermelha escura */
+    background-color: #FF4500 !important;
+    height: 100%;
+    border-radius: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.medalha-icon {
+    width: 35px;
+    height: 35px;
+    /* Move a medalha para cima da barra de progresso */
+    position: absolute;
+    left: calc(50% + 230px); /* Ajuste a posição X da medalha */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* A estrutura do HTML fornecida coloca a medalha ao lado da barra, vamos seguir o visual da imagem */
+/* Ajuste para alinhar a medalha ao lado da barra, conforme a imagem */
+header .d-flex.align-items-center.gap-3:first-child {
+    position: relative;
+}
+
+.medalha-icon {
+    width: 35px;
+    height: 35px;
+    margin-left: -35px; /* Ocupa o espaço à direita da barra */
+}
+
+
+/* Ícones de notificação e configurações */
+header .bi-bell,
+header .bi-gear {
+    cursor: pointer;
+    color: #FFD700; /* Cor amarelada/laranja para os ícones */
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.8);
+}
+
+/* Container Central do Formulário */
+.estrutura-central {
+    max-width: 1000px; /* Largura que acomoda bem a imagem e o conteúdo */
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+.row.bg-white {
+    /* Borda e sombra sutis para o bloco do formulário */
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    min-height: 500px; /* Altura mínima para o container */
+}
+
+/* 1. Estilo da Imagem Lateral */
+.col-md-6.p-0.d-none.d-md-block {
+    position: relative;
+    overflow: hidden;
+}
+
+.imagem-wrapper {
+    /* Forma curva na borda direita da imagem */
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.imagem-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Aplica a curva na borda direita da imagem */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* Cria a curva através de um clip-path ou psuedo-elemento (clip-path é mais limpo) */
+    clip-path: polygon(0 0, 90% 0, 75% 100%, 0 100%);
+}
+
+/* 2. Coluna Direita - Conteúdo */
+.col-md-6.p-6 {
+    /* Aumenta o padding para dar mais espaço */
+    padding: 40px !important;
+}
+
+.titulo-moedas h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700 !important;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd; /* Linha sutil abaixo do título */
+    padding-bottom: 15px;
+}
+
+.conteudo-moedas {
+    flex-direction: row; /* Garante que lista e card fiquem lado a lado */
+    align-items: flex-start; /* Alinha o topo dos elementos */
+    width: 100%;
+}
+
+/* 3. Lista de Desafios (Coluna Esquerda do Conteúdo) */
+.list-unstyled {
+    padding-right: 20px;
+    border-right: 1px solid #ddd; /* Linha vertical para separar visualmente (opcional, mas ajuda) */
+}
+
+.list-unstyled li {
+    font-size: 0.95rem;
+    color: #444;
+    padding: 8px 0;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-unstyled li strong {
+    font-weight: 600;
+}
+
+.list-unstyled li small {
+    display: none; /* A imagem não mostra a data de expiração, apenas a data/hora e o nome */
+}
+
+/* Ajusta o texto do desafio para ter a data e o nome */
+/* Como o HTML não tem a data/hora, simularemos o layout com o span XP */
+.list-unstyled li {
+    padding-right: 90px;
+}
+
+.list-unstyled li:before {
+    /* Simulando o Desafio Diário/Semanal */
+    content: "Desafio diário\A 14:00 18/05/2025";
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Substituindo o conteúdo para corresponder ao layout da imagem (texto na esquerda, botão na direita) */
+/* Removendo o conteúdo original do LI para reescrever o layout */
+.list-unstyled li {
+    /* Remove o conteúdo original */
+    font-size: 0;
+    margin-bottom: 15px !important;
+}
+
+/* Item 1 */
+.list-unstyled li:nth-child(1)::before { content: "Desafio diário \A 14:00 18/05/2025"; }
+/* Item 2 */
+.list-unstyled li:nth-child(2)::before { content: "Desafio semanal \A 11:00 17/05/2025"; }
+/* Item 3 */
+.list-unstyled li:nth-child(3)::before { content: "Desafio diário \A 13:00 14/05/2025"; }
+/* Item 4 */
+.list-unstyled li:nth-child(4)::before { content: "Desafio diário \A 10:00 10/05/2025"; }
+/* Item 5 */
+.list-unstyled li:nth-child(5)::before { content: "Desafio mensal \A 13:15 03/05/2025"; }
+/* Item 6 - Adicionando o último que falta no HTML */
+.list-unstyled li:nth-child(6)::before { content: "Desafio diário \A 14:30 28/04/2025"; }
+
+/* Botões de XP */
+.list-unstyled li::after {
+    content: "XP + 200"; /* Padrão, será ajustado */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    min-width: 80px;
+}
+
+/* Ajustando valores de XP */
+.list-unstyled li:nth-child(2)::after { content: "XP + 1300"; }
+.list-unstyled li:nth-child(3)::after { content: "XP + 100"; }
+.list-unstyled li:nth-child(4)::after { content: "XP + 400"; }
+.list-unstyled li:nth-child(5)::after { content: "XP + 1000"; }
+.list-unstyled li:nth-child(6)::after { content: "XP + 530"; }
+
+/* Linha vermelha vertical à direita do primeiro item (seletor: nth-child(1)) */
+.list-unstyled li:nth-child(1) {
+    position: relative;
+}
+.list-unstyled li:nth-child(1):after {
+    /* Linha vertical vermelha */
+    content: "";
+    position: absolute;
+    right: -20px; /* Alinhada com a borda do padding-right */
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #FF4500;
+}
+
+
+/* 4. Card de Pontos e Moedas (Coluna Direita do Conteúdo) */
+.pontos-card {
+    background: linear-gradient(180deg, #FFA500 0%, #FF8C00 100%); /* Gradiente laranja */
+    color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 200px; /* Largura fixa para o card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espaço entre as seções */
+}
+
+.pontos-card h5 {
+    font-size: 1rem;
+    font-weight: 500 !important;
+    margin-bottom: 10px;
+}
+
+.pontos-card h1 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1;
+}
+
+/* Ícone de Moedas (simulando a bolinha amarela) */
+.pontos-card h5 i.bi-coin {
+    background-color: #FFD700;
+    color: #FF4500;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* Botão de Conversão */
+.converter-btn {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FF4500; /* Borda vermelha */
+}
+
+.converter-btn i {
+    color: #FF4500;
+    font-size: 1.5rem !important;
+}
+
+/* Divisória entre Pontos e Moedas */
+.pontos-card hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+/* Ajustes para o layout do card ficar mais próximo do original */
+.pontos-card > div:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Usa o border-bottom em vez do HR */
+    padding-bottom: 20px;
+}
+
+.pontos-card > div:last-child {
+    padding-top: 20px;
+}
+
+.pontos-card hr.border-dark {
+    display: none; /* Oculta a HR original do HTML */
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configuração</title>
+
+  <!-- Bootstrap CSS + Ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/configuracao.css">
+
+</head>
+<body class="bg-gradient-swift">
+
+  <!-- TOPO -->
+  <header class="d-flex align-items-center justify-content-between p-3 text-white">
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-list fs-3"></i>
+      <img src="./imgs/logobranco.svg" alt="Logo Swift" class="logo-topo">
+
+      <!-- Barra de progresso -->
+      <div class="progress-container">
+        <span class="small text-white xp-numeros"> 1250 / 2500 XP</span>
+        <div class="progress">
+          <div class="progress-bar bg-danger" style="width: 50%;"></div>
+        </div>
+      </div>
+
+      <!-- Medalha -->
+      <img src="./imgs/megalhabronze.svg" alt="Medalha Bronze" class="medalha-icon">
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-bell fs-4"></i>
+      <i class="bi bi-gear fs-4"></i>
+    </div>
+  </header>
+
+  <!-- FORMULÁRIO -->
+  <main class="container-fluid my-1">
+    <div class="estrutura-central mx-auto">
+      <div class="row bg-white rounded shadow overflow-hidden">
+
+        <!-- Imagem lateral -->
+        <!-- <div class="col-md-6 p-0 d-none d-md-block"></div>
+          <img src="./simgs/carnecomsal.jpeg" alt="Imagem lateral" class="img-fluid h-100 object-fit-cover">
+        </div>-->
+
+        <!-- Formulário -->
+        <div class="col-md-6 p-4">
+          <form id="perfilForm">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <i class="bi bi-person-circle fs-1 perfil-icon"></i>
+              <div class="d-flex gap-2">
+                <button id="editarBtn" type="button" class="btn btn-outline-danger">Editar</button>
+                <button id="salvarBtn" type="button" class="btn btn-outline-danger">Salvar</button>
+                <button id="excluirBtn" type="button" class="btn btn-outline-danger">Excluir</button>
+              </div>
+            </div>
+
+            <!-- Campos -->
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="nome" value="" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" value="" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="text" class="form-control" id="senha" value="" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="funcao" class="form-label">Função</label>
+              <select class="form-select" id="funcao" readonly>
+
+                <option value="Funcionário" selected>Funcionário</option>
+                <option value="Vendedor">Cliente</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="data" class="form-label">Aniversário</label>
+              <input type="text" class="form-control" id="data" value="" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" value="São Bernardo do Campo" readonly>
+            </div>
+
+            <div class="mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" value="São Paulo" readonly>
+
+              <!-- Botão Voltar -->
+                <div class="text-center mt-5">
+                  <!-- Botão funcional -->
+                  <button onclick="alert('Configurações salvas!')" class="btn btn-primary">Voltar</button>
+                     </button>
+                  
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/configuracao.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

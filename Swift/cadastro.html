@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro swift</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+   <main class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center align-items-center">
+
+      <!-- Logo -->
+      <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+        <img class="img-fluid" src="./imgs/swift-logo.png" alt="Logo da Swift">
+      </div>
+
+      <!-- Formulário -->
+      <div class="col-lg-4 col-md-8">
+        <form id="formCadastro" class="bg-white p-5 rounded-4 shadow">
+          <img class="float-end mb-4" src="./imgs/Vector.png" alt="Decorativo">
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input type="text" id="nome" class="form-control" placeholder="Nome completo" required>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input type="email" id="email" class="form-control" placeholder="Email" required>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input type="email" id="confirmarEmail" class="form-control" placeholder="Confirmar email" required>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input type="password" id="senha" class="form-control" placeholder="Senha" minlength="6" required>
+            <button type="button" class="btn btn-outline-secondary" id="toggleSenha">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input type="password" id="confirmarSenha" class="form-control" placeholder="Confirmar senha" minlength="6" required>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select" id="cargo" required>
+              <option value="" disabled selected>Selecione o cargo</option>
+              <option value="gerente">Gerente</option>
+              <option value="atendente">Atendente</option>
+              <option value="caixa">Caixa</option>
+              <option value="funcionario">Funcionário</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="lembrar">
+            <label class="form-check-label" for="lembrar">Lembrar cadastro</label>
+          </div>
+
+          <div id="mensagem" class="mb-3"></div>
+
+          <button type="submit" class="btn btn-danger w-100">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

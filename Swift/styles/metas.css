@@ -1,0 +1,25 @@
+/* Gradiente da navbar */
+body {
+  background: linear-gradient(to right, #d32f2f, #ff9800);
+}
+
+/* Caixa de cada missão */
+.mission-box {
+  background: linear-gradient(to right, #f9d29d, #f9b47f);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.progress {
+  background-color: #ffe1d6;
+  border-radius: 50px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  font-size: 0.8rem;
+  font-weight: bold;
+}

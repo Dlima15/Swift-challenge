@@ -1,0 +1,241 @@
+/*
+ * =================================================================
+ * ESTILOS GLOBAIS (Opcional, mas recomendado para consistência)
+ * =================================================================
+ */
+:root {
+    --swift-orange: #F04E29;
+    --swift-orange-dark: #d84315;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * =================================================================
+ * BACKGROUND E LAYOUT PRINCIPAL
+ * =================================================================
+ */
+
+/* Contêiner de Fundo - Responsável pela Imagem e pelo Layout do Conteúdo */
+.bg-gradient-swift {
+    /* Imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("../imgs/fachada.png"); /* Adiciona um overlay escuro para melhor contraste */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax suave */
+
+    /* Layout (Desktop/Tablet) */
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; /* Alinha o conteúdo (login-wrapper) à direita */
+    padding-right: 10vw; /* Padding mais flexível (10% da largura da viewport) */
+}
+
+/* Wrapper Central - Responsável pela centralização em Mobile e posição em Desktop */
+.login-wrapper {
+    /* Altura total é gerenciada pelo .bg-gradient-swift no Desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Padding para evitar que o conteúdo cole nas bordas em mobile */
+    box-sizing: border-box;
+}
+
+/*
+ * =================================================================
+ * CAIXA DE LOGIN (OVERLAY)
+ * =================================================================
+ */
+
+/* Caixa Branca do Formulário */
+.login-overlay {
+    background-color: #fff;
+    border-radius: 12px; /* Aumento para um look mais suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais destacada e elegante */
+    width: 100%;
+    max-width: 420px; /* Pouco maior para um melhor design */
+    padding: 30px; /* Aumento do padding interno para mais 'ar' */
+    box-sizing: border-box;
+    /* Animação suave na entrada (opcional) */
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Título e Logo */
+.header-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px; /* Mais espaço após o header */
+}
+
+.titulo-login {
+    margin: 0;
+    font-size: 1.8rem; /* Título maior */
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo-img {
+    height: 45px; /* Levemente maior */
+    width: auto;
+}
+
+/*
+ * =================================================================
+ * ELEMENTOS DO FORMULÁRIO (INPUTS, BOTÕES, LINKS)
+ * =================================================================
+ */
+
+/* Links */
+.link-swift {
+    color: var(--swift-orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link-swift:hover {
+    color: var(--swift-orange-dark);
+    text-decoration: underline;
+}
+
+/* Botão de Ação Principal (Swift) */
+.btn-swift {
+    background-color: var(--swift-orange);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 12px 25px; /* Padding melhor */
+    width: 100%; /* Ocupa a largura total do container */
+    margin-top: 20px; /* Espaço acima do botão */
+    border-radius: 8px; /* Cantos um pouco mais arredondados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-swift:hover {
+    background-color: var(--swift-orange-dark);
+}
+
+.btn-swift:active {
+    transform: scale(0.99);
+}
+
+/* Estilização para Inputs (Genérico - Adicione classes de form-control do seu framework se necessário) */
+input[type="text"], input[type="password"], input[type="email"] {
+    /* Suaviza as bordas do input */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Placeholder elegante */
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+    opacity: 1; 
+}
+
+/* Toggle Eye e Ícones */
+.toggle-eye {
+    position: absolute;
+    /* Ajustes para alinhar verticalmente o ícone no centro do input */
+    top: 50%; /* Assume que a classe pai é 'position: relative' */
+    transform: translateY(-50%);
+    right: 15px; 
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #888;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.toggle-eye:hover {
+    color: var(--swift-orange);
+}
+
+/*
+ * É VITAL que o elemento pai do input e do .toggle-eye tenha
+ * 'position: relative;' para que a posição absoluta funcione corretamente.
+ */
+.input-group-relative {
+    position: relative;
+    margin-bottom: 20px; /* Espaçamento entre os campos */
+}
+
+/* Espaçamento entre checkbox e link (assumindo que d-flex etc. é Bootstrap) */
+.d-flex.justify-content-between {
+    gap: 15px; /* Pouco mais de espaço */
+}
+
+/*
+ * =================================================================
+ * RESPONSIVIDADE (MEDIA QUERIES)
+ * =================================================================
+ */
+
+/* Mobile (Até 768px - Inclui celulares e tablets pequenos) */
+@media (max-width: 768px) {
+    
+    /* Fundo em Mobile: Centraliza o formulário e remove o padding da direita */
+    .bg-gradient-swift {
+        background-attachment: scroll; /* Remove o efeito parallax para melhor performance */
+        justify-content: center; /* Centraliza o formulário horizontalmente */
+        align-items: flex-start; /* Alinha o formulário mais ao topo */
+        padding: 0; /* Remove padding lateral */
+        min-height: 100vh; /* Garante altura total */
+    }
+
+    /* O wrapper agora centraliza o conteúdo verticalmente na área disponível */
+    .login-wrapper {
+        min-height: auto; /* Não precisa de min-height 100vh aqui */
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Caixa de Login em Mobile */
+    .login-overlay {
+        margin-top: 50px; /* Empurra um pouco para baixo */
+        border-radius: 0;
+        box-shadow: none; /* Remove a sombra para dar uma sensação de tela cheia */
+        max-width: 100%; /* Ocupa a largura total disponível */
+        padding: 25px;
+    }
+
+    .titulo-login {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste para Remember Me / Esqueceu Senha */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+}
+
+/* Tablet (768px a 1024px) - Manter o layout de desktop, mas mais apertado */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bg-gradient-swift {
+        padding-right: 5vw; /* Reduz o padding para a direita */
+    }
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Loja de Recompensas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/loja.css"> 
+</head>
+<body>
+
+<div class="loja-container">
+    <nav class="navbar header-swift">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="menu-toggler"><i class="fas fa-bars"></i></button>
+                <span class="navbar-brand-swift">Swift</span>
+            </div>
+            
+            <div class="xp-bar-header d-none d-sm-flex align-items-center mx-3 animated-in">
+                <small class="text-white me-2">3530 / 25000 XP</small>
+                <div class="progress-bar-swift">
+                    <div class="progress-fill" style="width: 14.12%;"></div>
+                </div>
+                <span class="badge-swift ms-3" title="Nível Ouro"><i class="fas fa-medal"></i></span>
+            </div>
+
+            <div class="nav-icons">
+                <i class="fas fa-bell nav-icon animated-icon"></i>
+                <i class="fas fa-cog nav-icon animated-icon ms-3"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="image-section">
+                    </div>
+            </div>
+
+            <div class="col-12 col-lg-8 loja-area p-4 p-md-5">
+                
+                <div class="store-header d-flex justify-content-between align-items-center mb-4 animated-in">
+                    <div class="d-flex align-items-center">
+                        <span class="saldo-text me-2">Saldo:</span>
+                        <span class="saldo-value">10 <i class="fas fa-coins coin-icon pulse-coin"></i></span>
+                    </div>
+                    <h3 class="loja-title">LOJA</h3>
+                    <i class="fas fa-shopping-cart cart-icon clickable-icon"></i>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 reward-grid">
+                    
+                    <div class="col animated-in delay-1">
+                        <div class="reward-card" data-cost="1000">
+                            <span class="reward-type">Folga</span>
+                            <i class="fas fa-calendar-alt reward-icon"></i>
+                            <div class="cost-box">
+                                <span>1000</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col animated-in delay-2">
+                        <div class="reward-card" data-cost="800">
+                            <span class="reward-type discount-50">Desconto</span>
+                            <span class="discount-label">50% OFF</span>
+                            <div class="cost-box">
+                                <span>800</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col animated-in delay-3">
+                        <div class="reward-card" data-cost="1000">
+                            <span class="reward-type">Folga</span>
+                            <i class="fas fa-calendar-alt reward-icon"></i>
+                            <div class="cost-box">
+                                <span>1000</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col animated-in delay-4">
+                        <div class="reward-card" data-cost="900">
+                            <span class="reward-type cashback-type">Cashback</span>
+                            <span class="cashback-label">CASH BACK</span>
+                            <div class="cost-box">
+                                <span>900</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-5">
+                        <div class="reward-card" data-cost="150">
+                            <span class="reward-type">Brinde</span>
+                            <i class="fas fa-gift reward-icon"></i>
+                            <div class="cost-box">
+                                <span>150</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-6">
+                        <div class="reward-card" data-cost="600">
+                            <span class="reward-type discount-20">Desconto</span>
+                            <span class="discount-label">20% OFF</span>
+                            <div class="cost-box">
+                                <span>600</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-7">
+                        <div class="reward-card" data-cost="300">
+                            <span class="reward-type">Vale</span>
+                            <i class="fas fa-ticket-alt reward-icon"></i>
+                            <div class="cost-box">
+                                <span>300</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-8">
+                        <div class="reward-card" data-cost="500">
+                            <span class="reward-type cashback-type">Cashback</span>
+                            <span class="cashback-label">CASH BACK</span>
+                            <div class="cost-box">
+                                <span>500</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col animated-in delay-9">
+                        <div class="reward-card" data-cost="450">
+                            <span class="reward-type cashback-type">Cashback</span>
+                            <span class="cashback-label">CASH BACK</span>
+                            <div class="cost-box">
+                                <span>450</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-10">
+                        <div class="reward-card" data-cost="800">
+                            <span class="reward-type discount-50">Desconto</span>
+                            <span class="discount-label">50% OFF</span>
+                            <div class="cost-box">
+                                <span>800</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-11">
+                        <div class="reward-card" data-cost="150">
+                            <span class="reward-type">Brinde</span>
+                            <i class="fas fa-gift reward-icon"></i>
+                            <div class="cost-box">
+                                <span>150</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-12">
+                        <div class="reward-card bonificacao-card" data-cost="2000">
+                            <span class="reward-type bonificacao-type">Bonificação</span>
+                            <span class="discount-label">BONUS</span>
+                            <div class="cost-box">
+                                <span>2000</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col animated-in delay-13">
+                        <div class="reward-card" data-cost="150">
+                            <span class="reward-type">Brinde</span>
+                            <i class="fas fa-gift reward-icon"></i>
+                            <div class="cost-box">
+                                <span>150</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-14">
+                        <div class="reward-card" data-cost="600">
+                            <span class="reward-type discount-20">Desconto</span>
+                            <span class="discount-label">20% OFF</span>
+                            <div class="cost-box">
+                                <span>600</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col animated-in delay-15">
+                        <div class="reward-card" data-cost="300">
+                            <span class="reward-type">Vale</span>
+                            <i class="fas fa-ticket-alt reward-icon"></i>
+                            <div class="cost-box">
+                                <span>300</span>
+                                <i class="fas fa-coins coin-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/loja.js"></script>
+
+</body>
+</html>
